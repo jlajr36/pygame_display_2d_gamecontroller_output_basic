@@ -1,11 +1,16 @@
 import pygame
 
-#window setup
+#start pygame
+pygame.init()
+
+#colors
 background_color = (255, 255, 255)
-screen = pygame.display.set_mode((300, 300))
+
+#window setup
+size = (640, 480)
+screen = pygame.display.set_mode(size)
 pygame.display.set_caption('2D Controller Display')
-screen.fill(background_color)
-pygame.display.flip()
+
 
 #main game loop
 running = True
@@ -15,3 +20,12 @@ while running:
         #Check for user exit
         if event.type == pygame.QUIT:
             running = False
+
+    #draw screen and elements
+    screen.fill(background_color)
+
+    #update display
+    pygame.display.flip()
+
+#exit pygame
+pygame.quit()
